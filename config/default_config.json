@@ -1,0 +1,69 @@
+{
+  "simulation": {
+    "duration_sec": 300.0,
+    "default_population": 100,
+    "seeds": [42, 101, 2024, 777, 999]
+  },
+  "energy_model": {
+    "p_sleep_mw": 0.015,
+    "p_listen_mw": 45.0,
+    "p_rx_mw": 110.0,
+    "p_tx_mw": 320.0,
+    "t_listen_sec": 0.015,
+    "t_rx_sec": 0.060,
+    "t_tx_sec": 0.040,
+    "t_inactivity_sec": 0.100,
+    "battery_voltage_v": 3.0,
+    "battery_capacity_mah": 1200.0
+  },
+  "traffic": {
+    "default_pattern": "poisson",
+    "patterns": {
+      "sparse_poisson": {
+        "type": "poisson",
+        "rate_lambda": 0.05,
+        "default_deadline_sec": 8.0
+      },
+      "moderate_poisson": {
+        "type": "poisson",
+        "rate_lambda": 0.2,
+        "default_deadline_sec": 5.0
+      },
+      "bursty_mmpp": {
+        "type": "bursty",
+        "rate_on": 2.5,
+        "rate_off": 0.01,
+        "p_on_to_off": 0.25,
+        "p_off_to_on": 0.05,
+        "step_interval_sec": 1.0,
+        "default_deadline_sec": 4.0
+      },
+      "periodic": {
+        "type": "periodic",
+        "interval_sec": 15.0,
+        "jitter_pct": 0.10,
+        "default_deadline_sec": 10.0
+      },
+      "heavy_tail_pareto": {
+        "type": "pareto",
+        "alpha": 1.8,
+        "scale": 5.0,
+        "default_deadline_sec": 6.0
+      }
+    },
+    "payload_bytes": 256
+  },
+  "baseline_drx": {
+    "cycles_sec": [1.28, 2.56, 5.12, 10.24],
+    "default_cycle_sec": 2.56
+  },
+  "adaptive_paging": {
+    "t_min_sec": 0.64,
+    "t_max_sec": 10.24,
+    "t_burst_sec": 0.64,
+    "ewma_alpha": 0.35,
+    "qos_beta": 0.75,
+    "ramp_up_factor": 0.35
+  }
+}
+

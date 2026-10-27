@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Caches and runtime
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+*.log
+
+# Environments
+.env
+.env.*
+.venv/
+env/
+venv/
+ENV/
+
+# Secrets, Keys, and Credentials
+*.pem
+*.key
+*.token
+*.p12
+*.pfx
+secrets.json
+credentials.json
+
+# Operating System & Editor Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp

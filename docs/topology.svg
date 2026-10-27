@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#34495e" />
+    </linearGradient>
+    <linearGradient id="gradGnb" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a5276" />
+      <stop offset="100%" stop-color="#2980b9" />
+    </linearGradient>
+    <linearGradient id="gradUe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#145a32" />
+      <stop offset="100%" stop-color="#27ae60" />
+    </linearGradient>
+    <linearGradient id="gradUeSleep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#566573" />
+      <stop offset="100%" stop-color="#7f8c8d" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="3" dy="3" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2c3e50" />
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#c0392b" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2980b9" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="#f8f9fa" rx="12" />
+  
+  <!-- Title -->
+  <text x="480" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50" text-anchor="middle">
+    5G Adaptive Paging Architecture: gNodeB Controller &amp; Sleeping IoT Population
+  </text>
+  <text x="480" y="58" font-family="Arial, sans-serif" font-size="12" fill="#7f8c8d" text-anchor="middle">
+    Synchronized Traffic-Aware DRX / eDRX Scheduling with Latency QoS Guarantees
+  </text>
+
+  <!-- 5G Core Network Box -->
+  <g transform="translate(40, 90)">
+    <rect width="210" height="390" rx="8" fill="url(#gradCore)" filter="url(#shadow)" />
+    <text x="105" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">5G Core (5GC)</text>
+    
+    <!-- Core Functions -->
+    <rect x="20" y="55" width="170" height="55" rx="6" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-width="1"/>
+    <text x="105" y="78" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">UPF / User Plane</text>
+    <text x="105" y="96" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">DL Packet Arrival</text>
+
+    <rect x="20" y="125" width="170" height="55" rx="6" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-width="1"/>
+    <text x="105" y="148" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">AMF / Mobility</text>
+    <text x="105" y="166" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">Paging Request Signaling</text>
+
+    <rect x="20" y="195" width="170" height="55" rx="6" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-width="1"/>
+    <text x="105" y="218" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">SMF / Session Mgmt</text>
+    <text x="105" y="236" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">QoS Flow &amp; Deadline</text>
+
+    <rect x="20" y="270" width="170" height="95" rx="6" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-dasharray="3,3"/>
+    <text x="105" y="295" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12" text-anchor="middle">Traffic Regimes</text>
+    <text x="105" y="315" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">• Sparse Poisson (λ=0.05)</text>
+    <text x="105" y="330" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">• Bursty MMPP (On/Off)</text>
+    <text x="105" y="345" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">• Pareto / Periodic</text>
+  </g>
+
+  <!-- 5G gNodeB & Paging Controller Box -->
+  <g transform="translate(300, 90)">
+    <rect width="310" height="390" rx="8" fill="url(#gradGnb)" filter="url(#shadow)" />
+    <text x="155" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">5G gNodeB / Base Station</text>
+    
+    <!-- Paging Controller -->
+    <rect x="18" y="55" width="274" height="150" rx="6" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="1.2"/>
+    <text x="155" y="78" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">Adaptive Paging Controller (AdaPaging)</text>
+    
+    <rect x="30" y="92" width="250" height="32" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+    <text x="155" y="112" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Per-UE Downlink Priority Queues</text>
+
+    <rect x="30" y="132" width="250" height="32" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+    <text x="155" y="152" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">EWMA Inter-Arrival Tracker (τ̂_k)</text>
+
+    <rect x="30" y="172" width="250" height="24" rx="4" fill="#f39c12" fill-opacity="0.3"/>
+    <text x="155" y="188" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">QoS Latency Clamping: T_upper ≤ β·D_max</text>
+
+    <!-- Paging Channel Scheduler -->
+    <rect x="18" y="225" width="274" height="140" rx="6" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-width="1"/>
+    <text x="155" y="248" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">PCH / PDCCH P-RNTI Scheduler</text>
+    
+    <text x="32" y="275" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">• Multi-UE Paging Record Bundling (≤16/msg)</text>
+    <text x="32" y="295" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">• PO Calculation: SFN &amp; Subframe Alignment</text>
+    <text x="32" y="315" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1">• Eliminates Blind Broadcast Storms</text>
+    <text x="32" y="335" font-family="Arial, sans-serif" font-size="10" fill="#a9dfbf">• Bound Enforcement: T_min ≤ T_wake ≤ T_upper</text>
+  </g>
+
+  <!-- Sleeping IoT Device Population Box -->
+  <g transform="translate(660, 90)">
+    <rect width="260" height="390" rx="8" fill="#ffffff" stroke="#bdc3c7" stroke-width="2" filter="url(#shadow)" />
+    <text x="130" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50" text-anchor="middle">Sleeping IoT Population (UEs)</text>
+    
+    <!-- Active UE -->
+    <rect x="18" y="55" width="224" height="90" rx="6" fill="url(#gradUe)" />
+    <text x="130" y="78" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">UE 1: Active Burst State (P_rx=110mW)</text>
+    <text x="130" y="98" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">Rapid PO Collapse: T_wake = T_burst</text>
+    <text x="130" y="115" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">RACH Uplink + PDSCH Reception</text>
+    <text x="130" y="132" font-family="Arial, sans-serif" font-size="9" fill="#f9e79f" text-anchor="middle">Delivery Latency &lt; 1.0s (Zero Misses)</text>
+
+    <!-- Idle Wakeup UE -->
+    <rect x="18" y="160" width="224" height="90" rx="6" fill="#2980b9" />
+    <text x="130" y="183" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">UE 2: PO Monitor State (P_listen=45mW)</text>
+    <text x="130" y="203" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">PDCCH Blind Decode (15ms Window)</text>
+    <text x="130" y="220" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">No Paging → Multiplicative Ramp-Up</text>
+    <text x="130" y="237" font-family="Arial, sans-serif" font-size="9" fill="#d4efdf" text-anchor="middle">T_next = min(T_upper, T·(1+γ))</text>
+
+    <!-- Deep Sleep UEs -->
+    <rect x="18" y="265" width="224" height="90" rx="6" fill="url(#gradUeSleep)" />
+    <text x="130" y="288" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">UE 3...N: Deep Sleep (P_sleep=15uW)</text>
+    <text x="130" y="308" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">RF &amp; Baseband Powered Off (RTC only)</text>
+    <text x="130" y="325" font-family="Arial, sans-serif" font-size="10" fill="#ecf0f1" text-anchor="middle">Extended Sleep Interval up to T_upper</text>
+    <text x="130" y="342" font-family="Arial, sans-serif" font-size="9" fill="#f9e79f" text-anchor="middle">Estimated Battery Life: 5 - 10 Years</text>
+  </g>
+
+  <!-- Connective Arrows -->
+  <!-- 5GC to gNodeB -->
+  <line x1="250" y1="180" x2="295" y2="180" stroke="#2c3e50" stroke-width="2.5" marker-end="url(#arrow)" />
+  <text x="272" y="170" font-family="Arial, sans-serif" font-size="9" fill="#2c3e50" text-anchor="middle">N3 / GTP-U</text>
+
+  <!-- gNodeB to UEs -->
+  <line x1="610" y1="195" x2="655" y2="195" stroke="#2980b9" stroke-width="2.5" marker-end="url(#arrowBlue)" />
+  <text x="635" y="185" font-family="Arial, sans-serif" font-size="9" fill="#2980b9" text-anchor="middle">PDCCH</text>
+
+  <line x1="610" y1="110" x2="655" y2="110" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arrowRed)" />
+  <text x="635" y="100" font-family="Arial, sans-serif" font-size="9" fill="#c0392b" text-anchor="middle">PDSCH</text>
+
+  <!-- Bottom Legend / Caption -->
+  <rect x="40" y="495" width="880" height="32" rx="6" fill="#ebedef" />
+  <text x="480" y="515" font-family="Arial, sans-serif" font-size="10.5" fill="#34495e" text-anchor="middle">
+    Key Properties: Synchronized Deterministic PO Calculation • Traffic-Adaptive Intervals • Strict Latency Cap • 3GPP TR 38.840 Energy Model
+  </text>
+</svg>
+
